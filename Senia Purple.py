@@ -1,5 +1,5 @@
 # Senia Purple OS
-# Senia Purple by Leo
+# Senia Purple by MohamedFatma
 # Senia Purple v1.0-2024
 # ------------------------------------------------------------
 # Imports
@@ -20,26 +20,26 @@ selected = False
 
 
 def Senia_Purple():
-    #  We put the Leo copyright and and their properties in a function.
-    def Leo_copyright():
-        # Print Leo then down we put multiple(_)
+    #  We put the MohamedFatma copyright and and their properties in a function.
+    def MohamedFatma_copyright():
+        # Print MohamedFatma then down we put multiple(_)
         # or underscores so we mean or
         # symbolize part/s or different part/s then
-        # copyright for Leo then down we put multiple(-) or
+        # copyright for MohamedFatma then down we put multiple(-) or
         # hyphens so we mean or
         # symbolize part/s or different part/s then
-        # Senia Purple by Leo then lastly Senia Purple version hyphen(-)
+        # Senia Purple by MohamedFatma then lastly Senia Purple version hyphen(-)
         # then year of release(ex: v1.0-2024 for
         # now this version 1.0 for 2024).
-        leo_senia_purple_copy_senia_purple_version = print("""
-        Leo
+        MohamedFatma_senia_purple_copy_senia_purple_version = print("""
+        MohamedFatma
         _________________________________
-        Copyright © 2024 Leo. All rights reserved
+        Copyright © 2024 MohamedFatma. All rights reserved
         --------------------------------------------------------------
-        Senia Purple by Leo
+        Senia Purple by MohamedFatma
         Senia Purple v1.0-2024
         """)
-    Leo_copyright()
+    MohamedFatma_copyright()
     # We put the code of the setup and so on... in fuction Start_Purple_computer_setup exept copyright.
 
     def Start_Purple_computer_setup():
@@ -327,7 +327,7 @@ def Senia_Purple():
 
                 def grafo():
                     root = Tk()
-                    root.title('Senia by Leo - Grafo')
+                    root.title('Senia by MohamedFatma - Grafo')
                     root.iconbitmap('')
                     root.geometry("1200x800")
                     # Create New File Function
@@ -694,11 +694,11 @@ def Senia_Purple():
                 if operation == "license":
                     # we print the license for the user
                     print(f"""
-        licensed Senia Purple OS for the user {senia_purple_computer_name} by Leo
+        licensed Senia Purple OS for the user {senia_purple_computer_name} by MohamedFatma
         _________________________________
-        Copyright © 2024 Leo. All rights reserved
+        Copyright © 2024 MohamedFatma. All rights reserved
         --------------------------------------------------------------
-        Senia Purple by Leo
+        Senia Purple by MohamedFatma
         Senia Purple v1.0-2024""")
                     # Then go home after finishing
                     Home()
