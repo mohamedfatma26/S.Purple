@@ -5,11 +5,15 @@
 # Imports
 import time
 from tkinter import *
+from tkinter import filedialog, messagebox, colorchooser
 from tkinter import filedialog
 from tkinter import font
 from tkinter import colorchooser
+import PIL
+from PIL import Image, ImageDraw
 import os
 import sys
+import PIL.Image
 # Set variable for open file name
 global open_status_name
 open_status_name = False
@@ -125,200 +129,47 @@ def Senia_Purple():
                 # we define a calculator function that ==> is an operation to use
 
                 def calculator():
-                    # print welcome to the calculator
+                    # Print welcome to the calculator
                     print("Welcome to calculator")
-                    # we input all the current math operations to start with
-                    choose_operation = input(
-                        "add, sub, multi, divi, exith [to exit to home]: ")
-                    # if the user inputed add then...
-                    if choose_operation == "add":
-                        # we ask the user how many places for numbers wanted
-                        choose_how_many_numbers = int(input("2~5: "))
-                        # if the user chose 2 places
-                        if choose_how_many_numbers == 2:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we print the first and second numbers floats added
-                            print(first_num + second_num)
-                        elif choose_how_many_numbers == 3:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we print the first, second and third floats added
-                            print(first_num + second_num + third_num)
-                        elif choose_how_many_numbers == 4:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we print the first, second, third and fourth floats added
-                            print(first_num + second_num +
-                                  third_num + fourth_num)
-                        elif choose_how_many_numbers == 5:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we input what is the fifth number the user will choose
-                            fifth_num = float(input("Fifth number: "))
-                            # we print the first, second, third, fourth and fifth floats added
-                            print(first_num + second_num +
-                                  third_num + fourth_num + fifth_num)
-                    if choose_operation == "sub":
-                        # we ask the user how many places for numbers wanted
-                        choose_how_many_numbers = int(input("2~5: "))
-                        # if the user chose 2 places
-                        if choose_how_many_numbers == 2:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we print the first and second numbers floats subtracted
-                            print(first_num - second_num)
-                        elif choose_how_many_numbers == 3:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we print the first, second and third floats subtracted
-                            print(first_num - second_num - third_num)
-                        elif choose_how_many_numbers == 4:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we print the first, second, third and fourth floats subtracted
-                            print(first_num - second_num -
-                                  third_num - fourth_num)
-                        elif choose_how_many_numbers == 5:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we input what is the fifth number the user will choose
-                            fifth_num = float(input("Fifth number: "))
-                            # we print the first, second, third, fourth and fifth floats subtracted
-                            print(first_num - second_num -
-                                  third_num - fourth_num - fifth_num)
-                    if choose_operation == "multi":
-                        # we ask the user how many places for numbers wanted
-                        choose_how_many_numbers = int(input("2~5: "))
-                        # if the user chose 2 places
-                        if choose_how_many_numbers == 2:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we print the first and second numbers floats multiplication
-                            print(first_num * second_num)
-                        elif choose_how_many_numbers == 3:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we print the first, second and third floats multiplication
-                            print(first_num * second_num * third_num)
-                        elif choose_how_many_numbers == 4:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we print the first, second, third and fourth floats multiplication
-                            print(first_num * second_num *
-                                  third_num * fourth_num)
-                        elif choose_how_many_numbers == 5:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we input what is the fifth number the user will choose
-                            fifth_num = float(input("Fifth number: "))
-                            # we print the first, second, third, fourth and fifth floats multiplication
-                            print(first_num * second_num *
-                                  third_num * fourth_num * fifth_num)
-                    if choose_operation == "divi":
-                        # we ask the user how many places for numbers wanted
-                        choose_how_many_numbers = int(input("2~5: "))
-                        # if the user chose 2 places
-                        if choose_how_many_numbers == 2:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we print the first and second numbers floats division
-                            print(first_num / second_num)
-                        elif choose_how_many_numbers == 3:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we print the first, second and third floats division
-                            print(first_num / second_num / third_num)
-                        elif choose_how_many_numbers == 4:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we print the first, second, third and fourth floats division
-                            print(first_num / second_num /
-                                  third_num / fourth_num)
-                        elif choose_how_many_numbers == 5:
-                            # we input what is the first number the user will choose
-                            first_num = float(input("First number: "))
-                            # we input what is the second number the user will choose
-                            second_num = float(input("Second number: "))
-                            # we input what is the third number the user will choose
-                            third_num = float(input("Third number: "))
-                            # we input what is the fourth number the user will choose
-                            fourth_num = float(input("Fourth number: "))
-                            # we input what is the fifth number the user will choose
-                            fifth_num = float(input("Fifth number: "))
-                            # we print the first, second, third, fourth and fifth floats division
-                            print(first_num / second_num /
-                                  third_num / fourth_num / fifth_num)
-                    # if the user inputed exith then...
+                    
+                    # Input all the current math operations to start with
+                    choose_operation = input("add, sub, multi, divi, exith [to exit to home]: ")
+                    
+                    # If the user chose to add numbers
+                    if choose_operation in ["add", "sub", "multi", "divi"]:
+                        # Ask the user for the numbers they want to use (comma separated)
+                        numbers_input = input("Enter the numbers you want to use, separated by commas: ")
+                        # Convert the input string into a list of floats
+                        numbers = [float(num) for num in numbers_input.split(",")]
+                        
+                        # Perform the operation based on the user's choice
+                        if choose_operation == "add":
+                            result = sum(numbers)
+                        elif choose_operation == "sub":
+                            # Start with the first number and subtract the rest
+                            result = numbers[0]
+                            for num in numbers[1:]:
+                                result -= num
+                        elif choose_operation == "multi":
+                            result = 1
+                            for num in numbers:
+                                result *= num
+                        elif choose_operation == "divi":
+                            result = numbers[0]
+                            try:
+                                for num in numbers[1:]:
+                                    result /= num
+                            except ZeroDivisionError:
+                                print("Error: Division by zero is not allowed.")
+                                return
+                        
+                        # Print the result of the operation
+                        print(f"The result is: {result}")
+                    
+                    # If the user chose to exit, return to home
                     if choose_operation == "exith":
-                        # we exit and go home
                         Home()
+
                 # we make a function to exit the OS
 
                 def exitnow():
@@ -665,7 +516,75 @@ def Senia_Purple():
                 # we make rasem function that is Senia's official drawing editor
 
                 def rasem():
-                    pass
+                    WIDTH, HEIGHT = 500, 500
+                    CENTER = WIDTH // 2
+                    WHITE = (255, 255, 255)
+                    class wrasem:
+                        def __init__(self):
+                            self.root = Tk()
+                            self.root.title("Rasem! Just Draw")
+                            self.brush_thickness = 15
+                            self.default_color = "#000000"
+                            self.cnvs = Canvas(self.root, width=WIDTH, height=HEIGHT, bg="#FFFFFF")
+                            self.cnvs.pack()
+                            self.cnvs.bind("<B1-Motion>", self.draw)
+                            self.image = PIL.Image.new("RGB", (WIDTH, HEIGHT), WHITE )
+                            self.draw = ImageDraw.Draw(self.image)
+                            self.btn = Frame(self.root)
+                            self.btn.pack(fill=X)
+                            self.btn.columnconfigure(0, weight=1)
+                            self.btn.columnconfigure(1, weight=1)
+                            self.btn.columnconfigure(2, weight=1)
+                            self.clear_btn = Button(self.btn, text="CLEAR", command=self.clear)
+                            self.clear_btn.grid(row=1, column=2, sticky=W+E)
+                            self.save_btn = Button(self.btn, text="SAVE", command=self.save)
+                            self.save_btn.grid(row=1, column=1, sticky=W+E)
+                            self.ibrush_btn = Button(self.btn, text="Increase Brush Thickness", command=self.ibrush)
+                            self.ibrush_btn.grid(row=0, column=1, sticky=W+E)
+                            self.dbrush_btn = Button(self.btn, text="Decrease Brush Thickness", command=self.dbrush)
+                            self.dbrush_btn.grid(row=0, column=2, sticky=W+E)
+                            self.color_btn = Button(self.btn, text="Change Color", command=self.color)
+                            self.color_btn.grid(row=0, column=3, sticky=W+E)
+                            self.root.protocol("WM_DELETE_WINDOW", self.closewindow)
+                            self.root.attributes("-topmost", True)
+                            self.root.mainloop()
+
+                        def draw(self, event):
+                            x1, y1 = (event.x - 1), (event.y - 1)
+                            x2, y2 = (event.x + 1), (event.y + 1)
+                            self.cnvs.create_rectangle(x1, y1, x2, y2, outline=self.default_color, fill=self.default_color, width=self.brush_thickness)
+                            self.draw.rectangle([x1, y1, x2 + self.brush_thickness, y2 + self.brush_thickness], outline=self.default_color, fill=self.default_color, width=self.brush_thickness)
+
+                        def clear(self):
+                            self.cnvs.delete("all")
+                            self.draw.rectangle([0, 0, 1000, 1000], fill="#FFFFFF")
+
+                        def save(self):
+                            filename = filedialog.asksaveasfilename(initialfile="unkown.png", defaultextension="png", filetypes=[("PNG","JPG"), (".png",".jpg")])
+                            if filename != "":
+                                self.image.save(filename)
+
+                        def ibrush(self):
+                            self.brush_thickness += 1
+
+                        def dbrush(self):
+                            if self.brush_thickness > 1:
+                                self.brush_thickness -= 1
+
+                        def color(self):
+                            _, self.default_color = colorchooser.askcolor(title="Get Creative :)")
+
+                        def closewindow(self):
+                            answer = messagebox.askyesnocancel("Exit?", "Save Work before leaving?", parent=self.root)
+                            if answer is not None:
+                                if answer:
+                                    self.save()
+
+                                self.root.destroy()
+                                exit(0)
+
+                    wrasem()
+
                 # if the user wrote grafo
                 if operation == "grafo":
                     # call the function to start the grafo:
